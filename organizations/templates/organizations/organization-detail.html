@@ -1,0 +1,54 @@
+{% extends "organizations/base.html" %}
+
+{% block title %}{{organization.name}}{% endblock title %}
+
+{% block content %}
+<h1>{{organization.name}} {% if organization.abbreviation %}({{organization.abbreviation}}){% endif %}</h1>
+
+<table>
+  <tr>
+    <td>Website</td>
+    <td>
+      <a href="{{organization.website}}">{{organization.website}}</a>
+    </td>
+  </tr>
+  <tr>
+    <td>Email</td>
+    <td>{{organization.email}}</td>
+  </tr>
+  <tr>
+    <td>Facebook Page</td>
+    <td>{{organization.facebook}}</td>
+  </tr>
+  <tr>
+    <td>Twitter</td>
+    <td>{{organization.twitter}}</td>
+  </tr>
+  <tr>
+    <td>Instagram</td>
+    <td>{{organization.instagram}}</td>
+  </tr>
+  <tr>
+    <td>Telephone Number</td>
+    <td>{{organization.phone_number}}</td>
+  </tr>
+  <tr>
+    <td>Location</td>
+    <td>{{organization.city}}, {{organization.state}}</td>
+  </tr>
+  <tr>
+    <td>Issues</td>
+    <td>
+      <ul>
+        {% for issue in organization.issues.all %}
+        <li>{{issue}}</li>
+        {% endfor %}
+      </ul>
+    </td>
+  <tr>
+    <td>Description</td>
+    <td>{{organization.description}}</td>
+  </tr>
+  </tr>
+</table>
+{% endblock content %}

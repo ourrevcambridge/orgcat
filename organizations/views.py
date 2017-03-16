@@ -1,3 +1,8 @@
-from django.shortcuts import render
+from django.views.generic import DetailView
+from .models import Organization
 
-# Create your views here.
+class OrganizationView(DetailView):
+  model         = Organization
+  template_name = "organizations/organization-detail.html"
+
+detail = OrganizationView.as_view() 
