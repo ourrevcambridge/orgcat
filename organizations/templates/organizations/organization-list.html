@@ -1,0 +1,17 @@
+{% extends "organizations/base.html" %}
+
+{% block title %}Progressive Organizations{% endblock title %}
+
+{% block content %}
+<h1>Progressive Organizations</h1>
+
+<ul>
+  {% for organization in organizations %}
+  <li>
+    <a href="{{ organization.get_absolute_url }}">{{organization.name}}{% if organization.abbreviation %} ({{organization.abbreviation}}){% endif %}
+    </a>
+  </li>
+  {% endfor %}
+</ul>
+
+{% endblock content %}

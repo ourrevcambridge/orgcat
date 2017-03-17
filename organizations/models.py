@@ -1,5 +1,6 @@
 from django.conf import settings
 from django.db import models
+from django.urls import reverse
 
 from phonenumber_field.modelfields import PhoneNumberField
 
@@ -36,6 +37,9 @@ class Organization(models.Model):
 
   def __str__(self):
     return self.name
+
+  def get_absolute_url(self):
+    return reverse("organizations:detail", args=[str(self.id)])
 
 class Issue(models.Model):
   name = models.CharField(max_length=64)
