@@ -4,6 +4,12 @@
     <title>{% block title %}{% endblock title %} | OrgCat</title>
   </head>
   <body>
+    <nav>
+      <ul>
+        <li><a href="{% url 'organizations:list' %}">Home</a></li>
+        <li><a href="{% url 'core:about' %}">About</a></li>
+      </ul>
+    </nav>
     {% block content %}
     {% endblock content %}
   </body>
