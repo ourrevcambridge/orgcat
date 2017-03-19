@@ -1,0 +1,45 @@
+.body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.content {
+  flex: 1;
+}
+
+.nav {
+  background-color: #000
+}
+
+.nav-item {
+  display: inline-block;
+  list-style-type: none;
+   
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  -ms-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s; 
+}
+     
+.nav-item a {
+  color: #aaa;
+  display: block;
+  line-height: 4rem;
+  padding: 0 3rem 0 0;
+  text-decoration: none;
+}
+
+.nav-item a:hover {
+  color: #eee;
+}
+
+.content {
+  padding-top: 2rem;
+}
+
+.footer {
+  padding: 1rem;
+  text-align: center
+}
